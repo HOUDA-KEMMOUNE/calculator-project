@@ -23,6 +23,8 @@ const resultEl = document.querySelector(".result");
 // DOM
 
 let num = "";
+let currentOperation = null;
+let leftOperand = null;
 
 //the btn functions
 
@@ -36,10 +38,17 @@ const percentageClick = () => {
   resultEl.value = num;
 };
 
+/*
 const deviceClick = () => {
-  num += " / ";
-  resultEl.value = num;
+    if (num !== "") {
+        leftOperand = parseFloat(num);
+        currentOperation = '/';
+        num = '';
+        resultEl.value = num;
+      }
+      num += " / ";
 };
+*/
 
 const sevenClick = () => {
   num += "7";
@@ -56,10 +65,17 @@ const nineClick = () => {
   resultEl.value = num;
 };
 
+/*
 const multiplyClick = () => {
-  num += " x ";
-  resultEl.value = num;
-};
+    if (num !== "") {
+      leftOperand = parseFloat(num);
+      currentOperation = '*';
+      num = ''; 
+      resultEl.value = num;
+    }
+    num += " x ";
+  };
+*/
 
 const fourClick = () => {
   num += "4";
@@ -76,10 +92,18 @@ const sixClick = () => {
   resultEl.value = num;
 };
 
+/*
 const minusClick = () => {
-  num += " - ";
-  resultEl.value = num;
+    if (num !== "") {
+        leftOperand = parseFloat(num);
+        currentOperation = '-';
+        num = '';
+        resultEl.value = num;
+      }
+      num += " - ";
+
 };
+*/
 
 const oneClick = () => {
   num += "1";
@@ -96,11 +120,18 @@ const threeClick = () => {
   resultEl.value = num;
 };
 
+/*
 const plusClick = () => {
-  num += " + ";
-  resultEl.value = num;
-};
+    if (num !== "") {
+        leftOperand = parseFloat(num);
+        currentOperation = '+';
+        num = '';
+        resultEl.value = num;
+      }
+      num += " + ";
 
+};
+*/
 const zeroClick = () => {
   num += "0";
   resultEl.value = num;
@@ -116,11 +147,44 @@ const doteClick = () => {
   resultEl.value = num;
 };
 
-const equalClick = () => {
-  num += " = ";
-  resultEl.value = num;
-};
+const operatorClick = (operator) => {
+    if (num !== "") {
+      leftOperand = parseFloat(num);
+      currentOperation = operator;
+      num = ''; 
+    }
+  };
 
+const equalClick = () => {
+        if (currentOperation && num !== "") {
+          const rightOperand = parseFloat(num);
+          let result = 0;
+      
+          switch (currentOperation) {
+            case "+":
+              result = leftOperand + rightOperand;
+              break;
+            case "-":
+              result = leftOperand - rightOperand;
+              break;
+            case "*":
+              result = leftOperand * rightOperand;
+              break;
+            case "/":
+              result = leftOperand / rightOperand;
+              break;
+          }
+      
+          num = result.toString();
+          resultEl.value = num;
+          currentOperation = null;
+          leftOperand = null;
+        } else {
+            resultEl.value = 'Error';
+        }
+};
+      
+ 
 const resetClick = () => {
   num = "";
   resultEl.value = num;
@@ -130,23 +194,29 @@ const resetClick = () => {
 resetEl.addEventListener("click", resetClick);
 bracketsEl.addEventListener("click", bracketsClick);
 percentageEl.addEventListener("click", percentageClick);
-deviceEl.addEventListener("click", deviceClick);
+// deviceEl.addEventListener("click", deviceClick);
 sevenEl.addEventListener("click", sevenClick);
 eightEl.addEventListener("click", eightClick);
 nineEl.addEventListener("click", nineClick);
-multiplyEl.addEventListener("click", multiplyClick);
+// multiplyEl.addEventListener("click", multiplyClick);
 fourEl.addEventListener("click", fourClick);
 fiveEl.addEventListener("click", fiveClick);
 sixEl.addEventListener("click", sixClick);
-minusEl.addEventListener("click", minusClick);
+// minusEl.addEventListener("click", minusClick);
 oneEl.addEventListener("click", oneClick);
 twoEl.addEventListener("click", twoClick);
 threeEl.addEventListener("click", threeClick);
-plusEl.addEventListener("click", plusClick);
+// plusEl.addEventListener("click", plusClick);
 zeroEl.addEventListener("click", zeroClick);
 doubleZeroEl.addEventListener("click", doubleZeroClick);
 doteEl.addEventListener("click", doteClick);
 equalEl.addEventListener("click", equalClick);
+
+// operator click listeners
+plusEl.addEventListener("click", () => operatorClick('+'));
+minusEl.addEventListener("click", () => operatorClick('-'));
+multiplyEl.addEventListener("click", () => operatorClick('*'));
+deviceEl.addEventListener("click", () => operatorClick('/'));
 
 //tester
 console.log("test");
