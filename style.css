@@ -5,10 +5,7 @@
   }
   
   body {
-    width: 0%;
-    height: 0%;
     background-color: black;
-    margin-top: 100%;
     padding: 20px;
   }
   
@@ -16,6 +13,13 @@
     display: grid;
     grid-template-columns: 120px 120px 120px 120px;
     grid-template-rows: 100px 100px 100px 100px 100px;
+    justify-content: center;
+    margin: 0 auto; /* Center the calculator horizontally */
+    max-width: 600px; /* Adjust the maximum width as needed */
+    /* display: grid;
+    grid-template-columns: 120px 120px 120px 120px;
+    grid-template-rows: 100px 100px 100px 100px 100px;
+    justify-content: center; */
   }
   
   button {
@@ -23,8 +27,6 @@
     border: 1px solid rgba(0, 0, 0, 0.47);
     font-size: 25px;
     color: rgb(252, 252, 252);
-    /* font-family: "Horyzen", sans-serif;
-    font-family: "Horyzen Digital", sans-serif; */
     font-family: "Whois", sans-serif;
     cursor: pointer;
   }
@@ -42,18 +44,13 @@
     font-size: 40px;
     margin-bottom: 20px;
     font-family: "Whois", sans-serif;
-    /* display: flex;
-    align-self: flex-start; */
+    background-color: black;
+    color: white;
+    border: none;
+    width: 480px;
   }
   
   .equal-style {
     background-color: rgb(80, 133, 190);
     color: white;
-  }
-  
-  .result {
-    background-color: black;
-    color: white;
-    border: none;
-    width: 480px;
   }
