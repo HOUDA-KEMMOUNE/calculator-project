@@ -39,21 +39,8 @@ const percentageClick = () => {
     num = (numValue / 100).toString();
     resultEl.value = num;
   }
-  // num += " % ";
-  // resultEl.value = num;
 };
 
-/*
-const deviceClick = () => {
-    if (num !== "") {
-        leftOperand = parseFloat(num);
-        currentOperation = '/';
-        num = '';
-        resultEl.value = num;
-      }
-      num += " / ";
-};
-*/
 
 const sevenClick = () => {
   num += "7";
@@ -70,17 +57,6 @@ const nineClick = () => {
   resultEl.value = num;
 };
 
-/*
-const multiplyClick = () => {
-    if (num !== "") {
-      leftOperand = parseFloat(num);
-      currentOperation = '*';
-      num = ''; 
-      resultEl.value = num;
-    }
-    num += " x ";
-  };
-*/
 
 const fourClick = () => {
   num += "4";
@@ -97,18 +73,6 @@ const sixClick = () => {
   resultEl.value = num;
 };
 
-/*
-const minusClick = () => {
-    if (num !== "") {
-        leftOperand = parseFloat(num);
-        currentOperation = '-';
-        num = '';
-        resultEl.value = num;
-      }
-      num += " - ";
-
-};
-*/
 
 const oneClick = () => {
   num += "1";
@@ -125,18 +89,6 @@ const threeClick = () => {
   resultEl.value = num;
 };
 
-/*
-const plusClick = () => {
-    if (num !== "") {
-        leftOperand = parseFloat(num);
-        currentOperation = '+';
-        num = '';
-        resultEl.value = num;
-      }
-      num += " + ";
-
-};
-*/
 const zeroClick = () => {
   num += "0";
   resultEl.value = num;
@@ -178,9 +130,6 @@ const equalClick = () => {
             case "/":
               result = leftOperand / rightOperand;
               break;
-          //   case "%":
-          //     result = leftOperand / 100;
-          //     break;
           }
       
           num = result.toString();
@@ -225,7 +174,7 @@ plusEl.addEventListener("click", () => operatorClick('+'));
 minusEl.addEventListener("click", () => operatorClick('-'));
 multiplyEl.addEventListener("click", () => operatorClick('*'));
 deviceEl.addEventListener("click", () => operatorClick('/'));
-// percentageEl.addEventListener("click", () => operatorClick('%'));
+
 
 //tester
 console.log("test");
