@@ -23,7 +23,7 @@ const resultEl = document.querySelector(".result");
 // DOM
 
 let num = "";
-let currentOperation = null;
+let currentOperation = null;  
 let leftOperand = null;
 
 //the btn functions
@@ -34,8 +34,13 @@ const bracketsClick = () => {
 };
 
 const percentageClick = () => {
-  num += " % ";
-  resultEl.value = num;
+  if (num !== '') {
+    const numValue = parseFloat(num);
+    num = (numValue / 100).toString();
+    resultEl.value = num;
+  }
+  // num += " % ";
+  // resultEl.value = num;
 };
 
 /*
@@ -173,6 +178,9 @@ const equalClick = () => {
             case "/":
               result = leftOperand / rightOperand;
               break;
+          //   case "%":
+          //     result = leftOperand / 100;
+          //     break;
           }
       
           num = result.toString();
@@ -217,6 +225,7 @@ plusEl.addEventListener("click", () => operatorClick('+'));
 minusEl.addEventListener("click", () => operatorClick('-'));
 multiplyEl.addEventListener("click", () => operatorClick('*'));
 deviceEl.addEventListener("click", () => operatorClick('/'));
+// percentageEl.addEventListener("click", () => operatorClick('%'));
 
 //tester
 console.log("test");
