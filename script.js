@@ -194,19 +194,19 @@ const resetClick = () => {
 resetEl.addEventListener("click", resetClick);
 bracketsEl.addEventListener("click", bracketsClick);
 percentageEl.addEventListener("click", percentageClick);
-// deviceEl.addEventListener("click", deviceClick);
+
 sevenEl.addEventListener("click", sevenClick);
 eightEl.addEventListener("click", eightClick);
 nineEl.addEventListener("click", nineClick);
-// multiplyEl.addEventListener("click", multiplyClick);
+
 fourEl.addEventListener("click", fourClick);
 fiveEl.addEventListener("click", fiveClick);
 sixEl.addEventListener("click", sixClick);
-// minusEl.addEventListener("click", minusClick);
+
 oneEl.addEventListener("click", oneClick);
 twoEl.addEventListener("click", twoClick);
 threeEl.addEventListener("click", threeClick);
-// plusEl.addEventListener("click", plusClick);
+
 zeroEl.addEventListener("click", zeroClick);
 doubleZeroEl.addEventListener("click", doubleZeroClick);
 doteEl.addEventListener("click", doteClick);
