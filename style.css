@@ -47,7 +47,11 @@
     background-color: black;
     color: white;
     border: none;
-    width: 480px;
+    width: 75%;
+    text-align: center;
+    margin-left: 73px;
+
+
   }
   
   .equal-style {
