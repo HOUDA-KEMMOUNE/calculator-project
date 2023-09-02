@@ -1,6 +1,6 @@
 // DOM
 const resetEl = document.querySelector(".js-reset");
-const bracketsEl = document.querySelector(".js-brackets");
+// const bracketsEl = document.querySelector(".js-brackets");
 const percentageEl = document.querySelector(".js-percentage");
 const deviceEl = document.querySelector(".js-device");
 const sevenEl = document.querySelector(".js-7");
@@ -28,10 +28,10 @@ let leftOperand = null;
 
 //the btn functions
 
-const bracketsClick = () => {
-  num += "( )";
-  resultEl.value = num;
-};
+// const bracketsClick = () => {
+//   num += "( )";
+//   resultEl.value = num;
+// };
 
 const percentageClick = () => {
   if (num !== '') {
@@ -149,7 +149,7 @@ const resetClick = () => {
 
 //add event listtener
 resetEl.addEventListener("click", resetClick);
-bracketsEl.addEventListener("click", bracketsClick);
+// bracketsEl.addEventListener("click", bracketsClick);
 percentageEl.addEventListener("click", percentageClick);
 
 sevenEl.addEventListener("click", sevenClick);
